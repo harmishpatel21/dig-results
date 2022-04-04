@@ -1,0 +1,18 @@
+Description,Pipe Type,General,Pitting,Axial Grooving,Axial Slotting,Circ Grooving,Circ Slotting,Pinhole,Dent
+Bell & Spigot,B&S,10,10,10,10,10,10,15,1.3
+Double Submerged Arc Welded,DSAW,10,10,10,10,10,10,15,1.3
+Electric Fusion Welded,EFW,10,10,10,10,10,10,15,1.3
+Electric Resistance Welded,ERW,10,10,10,10,10,10,15,1.3
+Flange,Flange,10,10,10,10,10,10,15,1.3
+Flash Welded,FW,10,10,10,10,10,10,15,1.3
+Forged Fitting (Elbow),FF,10,10,10,10,10,10,15,1.3
+High Frequency Welded,HFW,10,10,10,10,10,10,15,1.3
+Lap Welded,Lap,10,10,10,10,10,10,15,1.3
+Reducer,Reducer,10,10,10,10,10,10,15,1.3
+Seamless,SMLS,10,10,10,10,10,10,15,1.3
+Single Submerged Arc Welded,SSAW,10,10,10,10,10,10,15,1.3
+Spiral Welded,Spiral,10,10,10,10,10,10,15,1.3
+Submerged Arc Welded,SAW,10,10,10,10,10,10,15,1.3
+Tee,Tee,10,10,10,10,10,10,15,1.3
+Unknown Pipe Type,Unknown,10,10,10,10,10,10,15,1.3
+Valve,Valve,10,10,10,10,10,10,15,1.3
