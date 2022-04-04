@@ -1,3 +1,4 @@
+from tkinter import Y
 from scripts import data_preparation as dp
 from components.inputs import file, get_measurement_errors
 from components.metalloss import metal_loss
