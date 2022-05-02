@@ -63,7 +63,7 @@ def metal_loss(metalloss_df, wallthickness_measurement_error_in, metalloss_measu
     else:
         st.error('No Orientation Data available')
     
-    if 'Actual_Burst_Pressure' in metalloss_df.columns and 'F_Burst_Pressure' in metalloss_df.columns:
+    if 'Actual_Burst_Pressure' in metalloss_df.columns and 'Actual_Burst_Pressure' in metalloss_df.columns:
         show_pressure_unity = st.checkbox('Show Pressure Unity Plot')
         if show_pressure_unity:
             print('Pressure Unity Plot')
