@@ -1,7 +1,6 @@
 import streamlit as st
 from scripts import data_preparation as dp
 from scripts import dataframe_operations as df_op
-from components.inputs import file, get_measurement_errors
 from scripts import get_statistics as gs
 from scripts.unity_plot import unity_plot
 from scripts.distribution_plot import distribution_plot
@@ -32,6 +31,8 @@ def dent(dent_df, metalloss_measurement_error_in_dent, confidence_interval):
         show_hist = st.checkbox("Show Histogram")
         histnorm = st.selectbox("Histogram Normalization", ['', 'probability'])
         distribution_plot(dent_df, 'ILI_Dent Depth (%)', 'F_Dent Depth (%)', 'Metal Loss', bin_size, histnorm, show_hist)
+
+    
 
     export_dent_df = st.checkbox('Export Dent Dataframe')
     if export_dent_df:

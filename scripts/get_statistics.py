@@ -8,7 +8,7 @@ def standard_deviation(df, col):
     return df[col].std()
 
 def conclusion_from_bias(avg):
-    return 'Positive bias indicates -- ILI tool over-estimates depths on average' if avg > 0 else 'Negative bias indicates -- ILI tool under-estimates depths on average'
+    return 'Positive average indicates -- ILI tool over-estimates depths on average' if avg > 0 else 'Negative average indicates -- ILI tool under-estimates depths on average'
 
 
 def statistics(df, col1, col2, string, confidence_interval):
@@ -25,6 +25,6 @@ def statistics(df, col1, col2, string, confidence_interval):
     sample_size_string = f'Sample Size: **{sample_size}** # Number of features with completed evaluations'
     st.markdown(sample_size_string)
     st.markdown(f'**{data_comparison}** of **{sample_size}** features are within the vendor stated **{confidence_interval}%** confidence interval')
-    st.markdown(f'**{avg_bias_string}%** for each depth measurement in the tool; **{bias_conclusion}**')
+    st.markdown(f'**{avg_bias_string}%** average for each depth measurement in the tool; **{bias_conclusion}**')
     st.markdown(f'{std_dev_string} & {outlier_string}')
     return None

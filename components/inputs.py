@@ -5,7 +5,7 @@ from scripts.data_preparation import read_data
 
 def get_inputs(string):
     try:
-        user_input = st.text_input(string)
+        user_input = st.sidebar.text_input(string)
         return float(user_input)
     except:
         pass
@@ -13,7 +13,7 @@ def get_inputs(string):
 
 def file():
     try:
-        uploaded_file = st.file_uploader("Upload a CSV file", type="csv")
+        uploaded_file = st.sidebar.file_uploader("Upload a CSV file", type="csv")
         if uploaded_file is not None:
             df = read_data(uploaded_file)
             return df

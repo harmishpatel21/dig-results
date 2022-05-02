@@ -1,7 +1,9 @@
+from statistics import mode
 import plotly.figure_factory as ff
 import streamlit as st
+import plotly.graph_objects as go
 
-def distribution_plot(df, col1, col2, string, bins, histnorm, show_hist=True, col3 = 'Metal Loss Class'):
+def distribution_plot(df, col1, col2, string, bins, histnorm, show_hist=True):
     x1 = df[col1]
     x2 = df[col2]
     hist_data = [x1, x2]
@@ -13,8 +15,9 @@ def distribution_plot(df, col1, col2, string, bins, histnorm, show_hist=True, co
         bin_size=bins,
         show_rug=False, 
         histnorm=histnorm, 
-        show_hist=show_hist)
-    
+        show_hist=show_hist,
+    )
+
     fig.update_layout(
         title = f'Distribution Plot - {string}',
         xaxis_title = f'{string} Depth (%)',
