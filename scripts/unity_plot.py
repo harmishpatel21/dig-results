@@ -21,14 +21,14 @@ def set_range(string, max_value, min_value):
         range_y = np.arange(0.5, 10, 1)
         tick0 = 1
         dtick = 1
-        name = '±0.5%'
+        name = '± 0.5%'
 
     elif string == "Length" or string == "Width":
         range_x = np.arange(0, np.floor(max_value)+1.05, 0.05)
         range_y = np.arange(0.35, np.floor(max_value)+1.05, 0.05)
         tick0 = 0.35
         dtick = 0
-        name  = '±0.35 in./±9mm'
+        name  = '± 0.35in./± 9mm'
     
     elif string == "Orientation":
         range_x = np.arange(0, 12, 1)
@@ -42,7 +42,7 @@ def set_range(string, max_value, min_value):
         range_y = np.arange(np.ceil(min_value/100)*100-50, np.floor(max_value/100)*100+100, 1)
         tick0 = 100
         dtick = 50
-        name = '±50 Pressure tolerance'
+        name = '± 50 Pressure tolerance'
 
     else:
         range_x = np.arange(0, 11, 1)
@@ -90,7 +90,7 @@ def add_unity_range(fig, string, max_value, min_value):
         yaxis = dict(
             tick0 = tick0,
             dtick = dtick,
-            rangemode = 'nonnegative'
+            rangemode = 'nonnegative',
         ),
     )
     return fig

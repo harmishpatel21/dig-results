@@ -23,15 +23,17 @@ def count_plot(df, col1, col2):
             base=0, 
             name=col2,
             hovertemplate = '%{text}',
-            text = [i for i in df_count1['count']])
+            text = [i for i in df_count2['count']])
     )
-
+    fig.update_traces(width = 0.4)
     fig.update_layout(
         title = f'Count Plot - {col1} vs {col2}',
         xaxis_title = 'Metal Loss Class',
         yaxis_title = 'Number of Anomalies',
         width=900,
-        height=700
+        height=700,
+        barmode = 'relative',
+        
     )
     st.plotly_chart(fig)
     return None

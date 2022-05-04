@@ -14,10 +14,12 @@ def metal_loss(metalloss_df, wallthickness_measurement_error_in, metalloss_measu
                 metalloss_measurement_error_in_ml,
                 confidence_interval)
             
-    ml_dataframe = st.checkbox('Show Metal loss Dataframe')
-    if ml_dataframe:
-        st.header('Metalloss Dataframe')
-        st.write(metalloss_df)
+    # ml_dataframe = st.checkbox('Show Metal loss Dataframe')
+    # if ml_dataframe:
+    #     st.header('Metalloss Dataframe')
+    
+    st.subheader('Metal Loss Dataframe')
+    st.write(metalloss_df)
 
     ml_stats = st.checkbox("Show Metal Loss Statistics")
     if ml_stats:
@@ -71,7 +73,7 @@ def metal_loss(metalloss_df, wallthickness_measurement_error_in, metalloss_measu
     
     show_count_by_metalloss_class_type = st.checkbox('Show Count by Metal Loss Class Type')
     if show_count_by_metalloss_class_type:
-        count_plot(metalloss_df, 'Actual_Metal Loss Class', 'ILI_Metal Loss Class')
+        count_plot(metalloss_df, 'ILI_Metal Loss Class', 'Actual_Metal Loss Class')
 
     # error_plot = st.checkbox('Show Error Plot')
     # if error_plot:
@@ -81,4 +83,5 @@ def metal_loss(metalloss_df, wallthickness_measurement_error_in, metalloss_measu
     export_ml_df = st.checkbox('Export Metal Loss Dataframe')
     if export_ml_df:
         dp.export_data(metalloss_df, 'Metal Loss')
+        st.write('Dataframe exported to Desktop')
     return None

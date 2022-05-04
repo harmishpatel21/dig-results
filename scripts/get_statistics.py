@@ -12,7 +12,7 @@ def conclusion_from_bias(avg):
 
 
 def statistics(df, col1, col2, string, confidence_interval):
-    st.header(f'Adjusted Tool Tolerance - {string}')
+    st.subheader(f'Statistics for - {string}')
     avg_bias = average_bias(df, col1).round(2)
     bias_conclusion = conclusion_from_bias(avg_bias)
     std_dev = standard_deviation(df, col1).round(2)
@@ -22,9 +22,10 @@ def statistics(df, col1, col2, string, confidence_interval):
     avg_bias_string = f'{avg_bias:.2f}'
     std_dev_string = f'Standard Deviation: **{std_dev:.2f}%**'
     outlier_string = f'Outliers: ± **{outlier.round(2)}**'
-    sample_size_string = f'Sample Size: **{sample_size}** # Number of features with completed evaluations'
+    sample_size_string = f'**Sample Size:** **{sample_size}** # Number of features with completed evaluations'
     st.markdown(sample_size_string)
     st.markdown(f'**{data_comparison}** of **{sample_size}** features are within the vendor stated **{confidence_interval}%** confidence interval')
-    st.markdown(f'**{avg_bias_string}%** average for each depth measurement in the tool; **{bias_conclusion}**')
+    st.markdown(f'**{avg_bias_string}%** average difference for each depth measurement in the tool.')
+    st.markdown(f'**{bias_conclusion}**')
     st.markdown(f'{std_dev_string} & {outlier_string}')
     return None
