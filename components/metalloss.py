@@ -82,6 +82,10 @@ def metal_loss(metalloss_df, wallthickness_measurement_error_in, metalloss_measu
 
     export_ml_df = st.checkbox('Export Metal Loss Dataframe')
     if export_ml_df:
-        dp.export_data(metalloss_df, 'Metal Loss')
-        st.write('Dataframe exported to Desktop')
+        # dp.export_data(metalloss_df, 'Metal Loss')
+        st.download_button(label='Download Metal Loss Dataframe',
+                            file_name='Metal Loss11.csv',
+                            data=metalloss_df.to_csv(),
+                            mime='text/csv')
+        # st.write('Dataframe exported to Desktop')
     return None
