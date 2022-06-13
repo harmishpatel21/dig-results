@@ -9,14 +9,14 @@ def error_graph(df, col1, col2, string):
     fig = go.Figure()
     fig.add_trace(go.Scatter(
         x = [mean1]*len(df[col1]),
-        y = np.array(range(0, len(df[col1]))),
-        mode = 'lines',
+        y = np.arange(0, 1, 0.1),
+        mode = 'lines'
         )
     )
     fig.add_trace(go.Scatter(
         x = [mean2]*len(df[col2]),
-        y = np.array(range(0, len(df[col2]))),
-        mode = 'lines',
+        y = np.arange(0, 1, 0.1),
+        mode = 'lines'
         )
     )
     fig.add_trace(go.Scatter(

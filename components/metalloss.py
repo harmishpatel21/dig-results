@@ -75,9 +75,9 @@ def metal_loss(metalloss_df, wallthickness_measurement_error_in, metalloss_measu
     if show_count_by_metalloss_class_type:
         count_plot(metalloss_df, 'ILI_Metal Loss Class', 'Actual_Metal Loss Class')
 
-    # error_plot = st.checkbox('Show Error Plot')
-    # if error_plot:
-    #     a = error_graph(metalloss_df, 'ILI_Metal Loss Depth (%)', 'F_Metal Loss Depth (%)', 'Metal Loss')
+    error_plot = st.checkbox('Show Error Plot')
+    if error_plot:
+        a = error_graph(metalloss_df, 'ILI_Metal Loss Depth (%)', 'F_Metal Loss Depth (%)', 'Metal Loss')
 
 
     export_ml_df = st.checkbox('Export Metal Loss Dataframe')

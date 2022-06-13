@@ -1,3 +1,5 @@
+import email
+from turtle import color
 import numpy as np
 import plotly.graph_objects as go
 import streamlit as st
@@ -39,10 +41,10 @@ def set_range(string, max_value, min_value):
 
     elif string == "Pressure":
         range_x = np.arange(np.ceil(min_value/100)*100-100, np.floor(max_value/100)*100+100, 1)
-        range_y = np.arange(np.ceil(min_value/100)*100-50, np.floor(max_value/100)*100+100, 1)
+        range_y = np.arange(np.ceil(min_value/100)*100-75, np.floor(max_value/100)*100+100, 1)
         tick0 = 100
-        dtick = 50
-        name = '± 50 Pressure tolerance'
+        dtick = 25
+        name = '± 25 Pressure tolerance'
 
     else:
         range_x = np.arange(0, 11, 1)
@@ -59,7 +61,7 @@ def add_unity_range(fig, string, max_value, min_value):
         mode = 'lines',
         line = dict(color='black', width=1),
         opacity = 0.5,
-        name = 'Unity Line',
+        name = 'Unity Line'
     ))
 
     fig.add_trace(go.Scatter(
@@ -91,7 +93,7 @@ def add_unity_range(fig, string, max_value, min_value):
             tick0 = tick0,
             dtick = dtick,
             rangemode = 'nonnegative',
-        ),
+        )
     )
     return fig
 
@@ -99,20 +101,14 @@ def unity_plot(df, col1, col2, string, col3 = 'ILI_Metal Loss Class'):
     max_value, min_value = get_min_max(df, col1, col2)
     print(max_value, min_value)
     fig = go.Figure()
-    if string == 'Metal Loss':
-        u_metalloss_classes = df[col3].unique()
-        # u_metalloss_classes = np.unique(df[col3].values)
-        d = dict(zip(u_metalloss_classes, np.arange(len(u_metalloss_classes))))
+
+    if string == "Length" or string == "Width" or string == 'Metal Loss':
         for i in df[col3].unique():
             fig.add_trace(go.Scatter(
-                x=df[df[col3] == i][col1],
-                y=df[df[col3] == i][col2],
-                mode='markers',
-                marker=dict(
-                    color=d[i],
-                    opacity=0.8
-                ),
-                name=i
+                x = df[col1][df[col3] == i],
+                y = df[col2][df[col3] == i],
+                mode = 'markers',
+                name = i
             ))
     else:
         fig.add_trace(go.Scatter(

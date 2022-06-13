@@ -1,6 +1,6 @@
-from statistics import mode
 import plotly.figure_factory as ff
 import streamlit as st
+import numpy as np
 import plotly.graph_objects as go
 
 def distribution_plot(df, col1, col2, string, bins, histnorm, show_hist=True):
@@ -9,13 +9,13 @@ def distribution_plot(df, col1, col2, string, bins, histnorm, show_hist=True):
     hist_data = [x1, x2]
     group_labels = [col1, col2]
     fig = ff.create_distplot(
-        hist_data, 
+        hist_data,
         group_labels,
-        curve_type='normal', 
+        curve_type='normal',
         bin_size=bins,
-        show_rug=False, 
-        histnorm=histnorm, 
-        show_hist=show_hist,
+        show_rug=False,
+        histnorm=histnorm,
+        show_hist=show_hist
     )
 
     fig.update_layout(
@@ -26,10 +26,9 @@ def distribution_plot(df, col1, col2, string, bins, histnorm, show_hist=True):
         height=700,
         xaxis = dict(
             tick0 = 0,
-            dtick = bins
-            ),
-    bargap = 0.01,
-    showlegend = True
+            dtick = bins),
+        bargap = 0.01,
+        showlegend = True
     )
-    st.plotly_chart(fig)
+    st.plotly_chart(fig) 
     return None
