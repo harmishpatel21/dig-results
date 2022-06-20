@@ -1,9 +1,6 @@
-import email
-from turtle import color
 import numpy as np
 import plotly.graph_objects as go
 import streamlit as st
-
 
 def get_min_max(df, col1, col2):
     max_value = max([x for i in zip(df[col1], df[col2]) for x in i])
