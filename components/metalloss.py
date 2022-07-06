@@ -57,7 +57,6 @@ def metal_loss(metalloss_df, wallthickness_measurement_error_in, metalloss_measu
         st.error('No Width Data available')
     
     if 'ILI_Clock Position' in metalloss_df.columns and 'F_Clock Position' in metalloss_df.columns:
-        
         show_orientation_unity = st.checkbox('Show Orientation Unity Plot')
         if show_orientation_unity:
             print('Orientation Unity Plot')

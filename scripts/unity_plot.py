@@ -90,13 +90,12 @@ def add_unity_range(fig, string, max_value, min_value):
             tick0 = tick0,
             dtick = dtick,
             rangemode = 'nonnegative',
-        )
-    )
+    ))
     return fig
 
 def unity_plot(df, col1, col2, string, col3 = 'ILI_Metal Loss Class'):
     max_value, min_value = get_min_max(df, col1, col2)
-    print(max_value, min_value)
+    # print(max_value, min_value)
     fig = go.Figure()
 
     if string == "Length" or string == "Width" or string == 'Metal Loss':
