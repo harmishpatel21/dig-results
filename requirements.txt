@@ -35,7 +35,7 @@ jupyter-client==7.1.2
 jupyter-core==4.9.2
 jupyterlab-pygments==0.1.2
 jupyterlab-widgets==1.1.0
-kaleido==0.1.0.post1
+kaleido==0.0.3.post1
 kiwisolver==1.4.1
 MarkupSafe==2.1.1
 matplotlib==3.5.1
