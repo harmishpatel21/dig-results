@@ -94,6 +94,5 @@ watchdog==2.1.7
 wcwidth==0.2.5
 webencodings==0.5.1
 widgetsnbextension==3.6.0
-windows-curses==2.3.0
 XlsxWriter==3.0.3
 zipp==3.7.0
