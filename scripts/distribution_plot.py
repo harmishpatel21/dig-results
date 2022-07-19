@@ -30,5 +30,5 @@ def distribution_plot(df, col1, col2, string, bins, histnorm, show_hist=True):
         bargap = 0.01,
         showlegend = True
     )
-    st.plotly_chart(fig) 
-    return None
+    # st.plotly_chart(fig) 
+    return fig

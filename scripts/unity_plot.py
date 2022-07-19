@@ -119,5 +119,5 @@ def unity_plot(df, col1, col2, string, col3 = 'ILI_Metal Loss Class'):
         xaxis_title = col1,
         yaxis_title = col2
     )
-    st.plotly_chart(fig)
+    # st.plotly_chart(fig)
     return fig

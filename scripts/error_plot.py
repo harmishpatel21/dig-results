@@ -36,5 +36,5 @@ def error_graph(df, col1, col2, string):
     #     name = col2
     #     )
     # )
-    st.plotly_chart(fig)
+    # st.plotly_chart(fig)
     return fig

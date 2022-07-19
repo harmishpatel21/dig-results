@@ -35,5 +35,5 @@ def count_plot(df, col1, col2):
         barmode = 'relative',
         
     )
-    st.plotly_chart(fig)
-    return None
+    # st.plotly_chart(fig)
+    return fig
