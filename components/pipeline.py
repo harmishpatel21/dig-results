@@ -46,7 +46,8 @@ def main():
         # folderpath = 'C:/projects/reports/dig stats/dig results/'
         # folderpath = 'D:/Data Science/Dig Results Database/'
         folderpath = st.text_input('Please enter path')
-        print(folderpath)
+        st.write(folderpath)
+
         folderpath = listdir(folderpath)
         print(folderpath)
         filepaths = [f for f in listdir(folderpath) if f.endswith('.csv')]
