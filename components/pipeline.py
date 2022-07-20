@@ -47,8 +47,9 @@ def main():
         # folderpath = 'D:/Data Science/Dig Results Database/'
         folderpath = st.text_input('Please enter path')
         
-        home = str(Path.home())
-        st.write(home)
+        home = Path.home().glob("**/*")
+        files = [x for x in home if x.is_file()]
+        st.write(files)
         filepaths = [f for f in listdir(folderpath) if f.endswith('.csv')]
         client_list = list(set([(i.split('.')[0])[:3] for i in filepaths]))
         print(client_list)
