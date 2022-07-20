@@ -48,8 +48,8 @@ def main():
         folderpath = st.text_input('Please enter path')
         filelist = []
         for root, _, files in os.walk(folderpath):
-            for file in files:
-                filename=os.path.join(root,file)
+            for file1 in files:
+                filename=os.path.join(root,file1)
                 filelist.append(filename)
         st.write(filelist)
         # st.write(os.listdir(folderpath))
