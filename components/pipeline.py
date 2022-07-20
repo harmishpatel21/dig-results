@@ -6,7 +6,6 @@ import streamlit as st
 from os import listdir
 import pandas as pd
 import os
-from pathlib import Path
 
 def tasks(data):
     data = dp.clean_data(data)
@@ -47,18 +46,9 @@ def main():
         # folderpath = 'C:/projects/reports/dig stats/dig results/'
         # folderpath = 'D:/Data Science/Dig Results Database/'
         folderpath = st.text_input('Please enter path')
-        filelist = []
-        st.write(Path(folderpath))
-        for root, _, files in os.walk(folderpath):
-            for file1 in files:
-                filename=os.path.join(root,file1)
-                filelist.append(filename)
-        st.write(filelist)
-        p = Path(folderpath).glob("**/*")
-        files_p = [x for x in p if x.is_file()]
-        st.write(files_p)
-        # st.write(os.listdir(folderpath))
-        print(folderpath)
+        # path = os.getcwd()
+        newpath = os.path.join(folderpath,"**")
+        st.write(newpath)
         filepaths = [f for f in listdir(folderpath) if f.endswith('.csv')]
         client_list = list(set([(i.split('.')[0])[:3] for i in filepaths]))
         print(client_list)
