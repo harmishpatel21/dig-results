@@ -3,7 +3,7 @@ import streamlit as st
 import numpy as np
 import plotly.graph_objects as go
 
-def distribution_plot(df, col1, col2, string, bins, histnorm, show_hist=True):
+def distribution_plot(df, col1, col2, string, bins=3, histnorm='probability', show_hist=True):
     x1 = df[col1]
     x2 = df[col2]
     hist_data = [x1, x2]

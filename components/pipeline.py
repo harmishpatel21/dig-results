@@ -95,10 +95,11 @@ def main():
             st.error('Please upload a CSV file')
 
         try:
-            data = dp.clean_data(data)
-            dent_df = dp.filter_data(data, 'ILI_Anomaly Type', 'Dent')
-            metalloss_df = data[data['ILI_Anomaly Type'] != 'Dent']
-            metalloss_df = metalloss_df[metalloss_df['F_Metal Loss Depth (%)'].notnull()]
+            metalloss_df, dent_df = tasks(data)
+            # data = dp.clean_data(data)
+            # dent_df = dp.filter_data(data, 'ILI_Anomaly Type', 'Dent')
+            # metalloss_df = data[data['ILI_Anomaly Type'] != 'Dent']
+            # metalloss_df = metalloss_df[metalloss_df['F_Metal Loss Depth (%)'].notnull()]
             metal_loss(metalloss_df, 
                         wallthickness_measurement_error_in, 
                         metalloss_measurement_error_in_ml, 
