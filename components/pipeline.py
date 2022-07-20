@@ -6,6 +6,9 @@ import streamlit as st
 from os import listdir
 import pandas as pd
 import os
+import requests
+from bs4 import BeautifulSoup
+import json
 
 def tasks(data):
     data = dp.clean_data(data)
@@ -46,7 +49,7 @@ def main():
         # folderpath = 'C:/projects/reports/dig stats/dig results/'
         # folderpath = 'D:/Data Science/Dig Results Database/'
         folderpath = st.text_input('Please enter path')
-        os.system(folderpath)
+
         filepaths = [f for f in listdir(folderpath) if f.endswith('.csv')]
         client_list = list(set([(i.split('.')[0])[:3] for i in filepaths]))
         print(client_list)
