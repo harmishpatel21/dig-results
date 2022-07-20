@@ -47,7 +47,7 @@ def main():
         # folderpath = 'D:/Data Science/Dig Results Database/'
         folderpath = st.text_input('Please enter path')
         filelist = []
-        for root, dirs, files in os.walk(folderpath):
+        for root, _, files in os.walk(folderpath):
             for file in files:
                 filename=os.path.join(root,file)
                 filelist.append(filename)
