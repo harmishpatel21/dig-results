@@ -5,7 +5,7 @@ from components.dent import dent
 import streamlit as st
 from os import listdir
 import pandas as pd
-from pathlib import Path
+import os
 
 def tasks(data):
     data = dp.clean_data(data)
@@ -46,10 +46,7 @@ def main():
         # folderpath = 'C:/projects/reports/dig stats/dig results/'
         # folderpath = 'D:/Data Science/Dig Results Database/'
         folderpath = st.text_input('Please enter path')
-        
-        home = Path.home().glob("**/*")
-        files = [x for x in home if x.is_file()]
-        st.write(files)
+        os.system(folderpath)
         filepaths = [f for f in listdir(folderpath) if f.endswith('.csv')]
         client_list = list(set([(i.split('.')[0])[:3] for i in filepaths]))
         print(client_list)
